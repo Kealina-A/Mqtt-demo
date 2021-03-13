@@ -21,12 +21,12 @@ public class Sender {
             MqttMessage message = buildMessage(msg);
             MqttDeliveryToken token = topic.publish(message);
             token.waitForCompletion();
-            log.info("send success ,clientId:[{}], topic:[{}], msg: [{}] ", clientId, topic, msg);
+            log.info("发送成功 ,clientId:[{}], topic:[{}], msg: [{}] ", clientId, topic, msg);
 
             client.disconnect();
             client.close();
         } catch (Exception e) {
-            log.info("fail to send ,clientId:[{}], topic:[{}], msg:[{}] ", clientId, topicName, msg, e);
+            log.info("发送失败 ,clientId:[{}], topic:[{}], msg:[{}] ", clientId, topicName, msg, e);
         }
     }
 

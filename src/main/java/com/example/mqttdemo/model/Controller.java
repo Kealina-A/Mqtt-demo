@@ -14,12 +14,14 @@ public class Controller {
     private final Sender sender;
 
     @GetMapping("/register")
-    public void register() {
+    public String register() {
         subscriber.register("sub_1","topic");
+        return "success";
     }
 
     @GetMapping("/send")
-    public void send() {
+    public String send() {
         sender.send("pub_1","topic","hello world");
+        return "success";
     }
 }

@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  emqx:
+    image: emqx/emqx:latest
+    container_name: emqx
+    restart: always
+    ports:
+      - 18083:18083 # admin界面
+      - 1883:1883 # tcp
+      - 8883:8883 # tsl or ssl
+#      - 8083:8083 # websocket
+#    volumes:
+#      - ./emqx/certs:/opt/emqx/etc/certs:ro #证书配置
+#      - ./emqx/emqx.conf:/opt/emqx/etc/emqx.conf #配置文件
+#      - ./emqx/plugins/emqx_auth_jwt.conf:/opt/emqx/etc/plugins/emqx_auth_jwt.conf #jwt认证方式
+#      - ./emqx/plugins/emqx_auth_mysql.conf:/opt/emqx/etc/plugins/emqx_auth_mysql.conf　#mysql认证方式
+
